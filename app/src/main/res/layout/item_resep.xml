@@ -7,12 +7,12 @@
     android:layout_marginBottom="16dp"
     app:cardUseCompatPadding="true"
     android:foreground="?attr/selectableItemBackground"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="4dp">
+    app:cardElevation="4dp">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="8dp">
         <TextView
             android:id="@+id/judul"
             android:layout_width="match_parent"
@@ -20,6 +20,7 @@
             android:layout_marginBottom="2dp"
             android:background="@drawable/square"
             android:textSize="18sp"
+            android:gravity="center"
             android:textStyle="bold"
             tools:text="Sambal goreng"
             />

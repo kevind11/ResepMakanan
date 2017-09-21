@@ -35,6 +35,13 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ResepHolder>
 
     @Override
     public void onBindViewHolder(ResepHolder holder, int position) {
+        RecyclerView.LayoutParams  params = (RecyclerView.LayoutParams) holder.mItemView.getLayoutParams();
+        if(position == 0){
+            params.topMargin = params.bottomMargin;
+        }
+        else{
+            params.topMargin = 0;
+        }
         String judul = mJudul[position];
         String ket = mKet[position];
         holder.setResep(judul,ket);
@@ -50,11 +57,14 @@ public class ResepAdapter extends RecyclerView.Adapter<ResepAdapter.ResepHolder>
     public class ResepHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView textView1;
         private TextView textView2;
+        private View mItemView;
         public ResepHolder(View itemView) {
             super(itemView);
             textView1 = (TextView) itemView.findViewById(R.id.judul);
             textView2 = (TextView) itemView.findViewById(R.id.keterangan);
-            itemView.setOnClickListener(this);
+            mItemView = itemView;
+            mItemView.setOnClickListener(this);
+
         }
         public void setResep(String judul,String ket){
             textView1.setText(judul);
